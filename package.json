@@ -1,0 +1,14 @@
+{
+    "name": "mtg-converter",
+    "version": "1.0.0",
+    "description": "Personal converter of MTGJSON files into my own format",
+    "scripts": {
+        "lint": "npx eslint ./src --ext .js --fix",
+        "convert": "node .\\src\\converter.js"
+    },
+    "dependencies": {
+    },
+    "devDependencies": {
+        "eslint": "^7.1.0"
+    }
+}
