@@ -7,7 +7,7 @@ const fs = require('fs');
  * @param {Object} set
  */
 const writeToOutput = (set) => {
-    const path = `${__dirname}\\output\\${set.name}`;
+    const path = `${__dirname}\\output\\${set.name}.json`;
     const setText = JSON.stringify(set);
     fs.writeFileSync(path, setText);
 };
@@ -79,7 +79,7 @@ const convertCards = (mtgCards) => {
         return {
             name: mtgCard.name,
             types: mtgCard.types,
-            subType: mtgCard.subTypes,
+            subTypes: mtgCard.subtypes,
             convertedManaCost: mtgCard.convertedManaCost,
             manaCost: convertManaCost(mtgCard.manaCost),
             rarity: mtgCard.rarity,
@@ -110,7 +110,6 @@ const convertTokens = (mtgTokens) => {
             power: convertToInt(token.power),
             toughness: convertToInt(token.toughness),
             types: token.types,
-            subtypes: token.subtypes,
             text: convertAbilities(token.text),
             uuid: token.uuid
         };
